@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sakura Bot</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <meta content="#d1d5db" data-react-helmet="true" name="theme-color" />
+    <meta
+      name="title"
+      content="Sakura Bot - Take Your Server to the Next Level"
+    />
+    <meta
+      name="description"
+      content="Sakura Bot is a versatile Discord bot with features like giveaways, leveling, Minecraft server status tracking, games, button roles, and a much more, designed to enhance server management and engagement."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="#" />
+    <meta
+      property="og:title"
+      content="Sakura Bot - Take Your Server to the Next Level"
+    />
+    <meta
+      property="og:description"
+      content="Sakura Bot is a versatile Discord bot with features like giveaways, leveling, Minecraft server status tracking, games, button roles, and a much more, designed to enhance server management and engagement."
+    />
+    <meta property="og:image" content="logo.png" />
+    <meta property="og:color" content="#d1d5db" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="#" />
+    <meta
+      property="twitter:title"
+      content="Sakura Bot - Take Your Server to the Next Level"
+    />
+    <meta
+      property="twitter:description"
+      content="Sakura Bot is a versatile Discord bot with features like giveaways, leveling, Minecraft server status tracking, games, button roles, and a much more, designed to enhance server management and engagement."
+    />
+    <meta property="twitter:image" content="logo.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+  </head>
+  <body
+    class="bg-black text-white max-h-[400px] overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-400"
+  >
+    <div
+      id="loader"
+      class="fixed inset-0 bg-black z-50 flex items-center justify-center"
+    >
+      <div
+        class="w-12 h-12 border-4 border-gray-400 border-t-transparent rounded-full animate-spin"
+      ></div>
+    </div>
+    <nav class="fixed w-full z-50 top-0">
+      <div id="navbar-main" class="nav-blur bg-black/30 border-b border-white/10 transition-all duration-500">
+    <script>
+      // Dynamic navbar island effect on scroll
+      const navbar = document.getElementById('navbar-main');
+      // Inicialmente pegado arriba
+      navbar.style.marginTop = '0px';
+      navbar.style.width = '100%';
+      navbar.style.marginLeft = 'auto';
+      navbar.style.marginRight = 'auto';
+      navbar.style.borderRadius = '0';
+      navbar.style.boxShadow = 'none';
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        if (scrollY > 32) {
+          navbar.style.marginTop = '24px';
+          navbar.style.width = '90%';
+          navbar.style.marginLeft = 'auto';
+          navbar.style.marginRight = 'auto';
+          navbar.style.borderRadius = '2.5rem';
+          navbar.style.boxShadow = '0 0 32px 0 rgba(200,180,255,0.12), 0 2px 12px 0 rgba(255,255,255,0.08)';
+        } else {
+          navbar.style.marginTop = '0px';
+          navbar.style.width = '100%';
+          navbar.style.marginLeft = 'auto';
+          navbar.style.marginRight = 'auto';
+          navbar.style.borderRadius = '0';
+          navbar.style.boxShadow = 'none';
+        }
+      });
+    </script>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-20">
+            <div class="flex items-center gap-2">
+              <img
+                src="sakuralogo.png"
+                alt="Sakura Bot Logo"
+                class="w-16 h-16 rounded-xl object-contain"
+              />
+            </div>
+
+            <div class="hidden md:flex gap-8 justify-center flex-1">
+              <a
+                href="#hero"
+                class="text-white/70 hover:text-white transition-colors"
+                >Home</a
+              >
+              <a
+                href="#features"
+                class="text-white/70 hover:text-white transition-colors"
+                >Features</a
+              >
+              <a
+                href="#commands"
+                class="text-white/70 hover:text-white transition-colors"
+                >Commands</a
+              >
+              <a
+                href="#testimonials"
+                class="text-white/70 hover:text-white transition-colors"
+                >Testimonials</a
+              >
+              <a href="pricing.html" class="text-white/70 hover:text-white transition-colors">Pricing</a>
+            </div>
+
+            <div class="md:hidden">
+              <button onclick="toggleMobileMenu()" class="text-white p-2">
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    class="menu-icon"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <a href="#" class="hidden md:block">
+              <a href="https://discord.com/oauth2/authorize?client_id=1361466527836147902&permissions=8&integration_type=0&scope=bot+applications.commands" target="_blank" rel="noopener noreferrer">
+                <button class="bg-white/10 hover:bg-white/20 px-6 py-2 rounded-lg transition-all duration-300 w-full">Add to Discord</button>
+              </a>
+            </a>
+          </div>
+
+          <div id="mobileMenu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-black/50 rounded-lg mt-2">
+              <a
+                href="#hero"
+                class="block px-3 py-2 text-white/70 hover:text-white transition-colors"
+                >Home</a
+              >
+              <a
+                href="#features"
+                class="block px-3 py-2 text-white/70 hover:text-white transition-colors"
+                >Features</a
+              >
+              <a
+                href="#commands"
+                class="block px-3 py-2 text-white/70 hover:text-white transition-colors"
+                >Commands</a
+              >
+              <a
+                href="#testimonials"
+                class="block px-3 py-2 text-white/70 hover:text-white transition-colors"
+                >Testimonials</a
+              >
+              <a
+                href="#"
+                class="block px-3 py-2 text-white/70 hover:text-white transition-colors"
+                >Add to Discord</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section id="hero" class="min-h-screen relative overflow-hidden">
+      <div class="absolute inset-0 gradient-bg opacity-10"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-700/40 via-black to-black"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-56"> <!-- pt-56 para bajar el bloque principal -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-20"> <!-- pt-20 para bajar aún más el bloque -->
+          <div class="space-y-8 text-center lg:text-left">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+              Take Your Server to the
+              <span class="bg-clip-text text-transparent bg-gradient-to-r from-gray-300 to-gray-500">Next Level</span>
+            </h1>
+            <p class="text-lg md:text-xl text-white/70">
+              Experience Discord's most powerful bot with advanced moderation, ticketing, automation, and more.
+            </p>
+            <div class="flex flex-col gap-4 sm:flex-row sm:gap-8 justify-center lg:justify-start">
+              <a href="https://discord.com/oauth2/authorize?client_id=1361466527836147902&permissions=8&integration_type=0&scope=bot+applications.commands" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gradient-bg px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition-opacity duration-300 text-gray-900 bg-gray-200 hover:bg-gray-300">
+                Add to Discord
+              </a>
+              <a href="#commands" class="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 px-8 py-4 rounded-xl font-semibold transition-colors duration-300">
+                View Commands
+              </a>
+            </div>
+          </div>
+          <div class="flex justify-center lg:justify-start">
+            <img src="logo.png" alt="Sakura Logo" class="w-[28rem] h-[18rem] max-w-full object-contain rounded-3xl" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="features" class="py-32 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <h2 class="text-5xl font-bold mb-4">Features of Sakura Bot</h2>
+          <p class="text-xl text-white/70">
+            Everything you need to enhance and manage your Discord server with
+            ease.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="feature-card p-8 rounded-2xl">
+            <div
+              class="w-14 h-14 gradient-bg rounded-xl mb-6 flex items-center justify-center text-2xl"
+            >
+              ⚡
+            </div>
+            <h3 class="text-2xl font-bold mb-4">99.9% Uptime</h3>
+            <p class="text-white/70">
+              Sakura Bot runs 24/7 with industry-leading uptime, ensuring your
+              server is always managed without interruptions.
+            </p>
+          </div>
+          <div class="feature-card p-8 rounded-2xl">
+            <div
+              class="w-14 h-14 gradient-bg rounded-xl mb-6 flex items-center justify-center text-2xl"
+            >
+              🔨
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Powerful Moderation</h3>
+            <p class="text-white/70">
+              Keep your server safe with advanced moderation tools, including
+              bans, mutes, warnings, and automated filters.
+            </p>
+          </div>
+          <div class="feature-card p-8 rounded-2xl">
+            <div
+              class="w-14 h-14 gradient-bg rounded-xl mb-6 flex items-center justify-center text-2xl"
+            >
+              🎁
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Giveaways & Rewards</h3>
+            <p class="text-white/70">
+              Easily create giveaways with interactive join buttons, rerolls,
+              and customizable prize options for your community.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="commands" class="py-32 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <h2 class="text-5xl font-bold mb-4">Commands</h2>
+          <p class="text-xl text-white/70">
+            Explore all available bot commands
+          </p>
+        </div>
+      <div class="space-y-6" id="commands-container"></div>
+    </section>
+    <section id="testimonials" class="py-32 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <h2 class="text-5xl font-bold mb-4 text-white">What Our Users Say</h2>
+          <p class="text-xl text-white/70">
+            See how Sakura Bot is transforming Discord server management for our
+            users.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="testimonial-card feature-card p-8 rounded-2xl">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-2xl overflow-hidden">
+                <img class="w-full h-full object-cover rounded-full" src="fuckthat.jpg" alt="User 1" />
+              </div>
+              <div>
+                <h4 class="text-xl font-bold text-white">@fuckthat</h4>
+                <p class="text-sm text-white/70">Sakura User</p>
+              </div>
+            </div>
+            <p class="text-white/70 text-lg mb-4">
+              "Muy completo y no se me complico ya que me lo instalo xanax al toque."
+            </p>
+          </div>
+          <div class="testimonial-card feature-card p-8 rounded-2xl">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-2xl overflow-hidden">
+                <img class="w-full h-full object-cover rounded-full" src="livinglife.jpg" alt="User 2" />
+              </div>
+              <div>
+                <h4 class="text-xl font-bold text-white">@livinglife</h4>
+                <p class="text-sm text-white/70">Sakura User</p>
+              </div>
+            </div>
+            <p class="text-white/70 text-lg mb-4">
+              "Fácil de usar, rápido y sin complicaciones. Ideal para cualquier server"
+            </p>
+          </div>
+          <div class="testimonial-card feature-card p-8 rounded-2xl">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-2xl overflow-hidden">
+                <img class="w-full h-full object-cover rounded-full" src="lonely.jpg" alt="User 3" />
+              </div>
+              <div>
+                <h4 class="text-xl font-bold text-white">@fuckthat</h4>
+                <p class="text-sm text-white/70">Sakura User</p>
+              </div>
+            </div>
+            <p class="text-white/70 text-lg mb-4">
+              "Los tickets andan joya y la moderación me ahorra banda de tiempo."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="bg-black min-h-screen flex flex-col items-center justify-center p-4 sm:p-8 md:p-16 lg:p-32"
+    >
+      <div class="text-center mb-20">
+        <h2 class="text-5xl font-bold mb-4 text-white">Connect With Us</h2>
+        <p class="text-xl text-white/70">
+          Join our community and contribute to development.
+        </p>
+      </div>
+      <div class="w-full max-w-2xl flex flex-col gap-8 items-center sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row gap-8 w-full justify-center">
+          <div class="relative bg-white/5 border border-white/10 rounded-2xl p-0 w-full max-w-xs flex flex-col items-center feature-card overflow-hidden shadow-xl transition-all duration-300 hover:scale-[1.03]">
+            <div class="absolute inset-0 z-0 bg-cover bg-center blur-[2px] opacity-40" style="background-image: url('xanax.jpg');"></div>
+            <div class="relative z-10 flex flex-col items-center p-8">
+              <img src="xanax.jpg" alt="xanax" class="w-24 h-24 object-cover rounded-full mb-4 shadow-lg border-4 border-white/20" />
+              <h3 class="text-white text-2xl font-bold mb-1 drop-shadow">xanax</h3>
+              <p class="text-white/70 text-base mb-4">@fuckthexanax</p>
+              <a href="https://discord.com/users/753264072614608968" target="_blank" rel="noopener noreferrer">
+                <button class="px-6 py-2 rounded-xl font-semibold border border-gray-400 text-white bg-black/60 shadow-lg transition-all duration-300 hover:bg-neutral-900 hover:text-white hover:border-gray-700 focus:ring-0 active:bg-neutral-900">Contact me</button>
+              </a>
+            </div>
+          </div>
+          <div class="relative bg-white/5 border border-white/10 rounded-2xl p-0 w-full max-w-xs flex flex-col items-center feature-card overflow-hidden shadow-xl transition-all duration-300 hover:scale-[1.03]">
+            <div class="absolute inset-0 z-0 bg-cover bg-center blur-[2px] opacity-40" style="background-image: url('sanntilua.jpg');"></div>
+            <div class="relative z-10 flex flex-col items-center p-8">
+              <img src="sanntilua.jpg" alt="sanntilua" class="w-24 h-24 object-cover rounded-full mb-4 shadow-lg border-4 border-white/20" />
+              <h3 class="text-white text-2xl font-bold mb-1 drop-shadow">sanntilua</h3>
+              <p class="text-white/70 text-base mb-4">@sanntilua</p>
+              <a href="https://discord.com/users/557257510470287360" target="_blank" rel="noopener noreferrer">
+                <button class="px-6 py-2 rounded-xl font-semibold border border-gray-400 text-white bg-black/60 shadow-lg transition-all duration-300 hover:bg-neutral-900 hover:text-white hover:border-gray-700 focus:ring-0 active:bg-neutral-900">Contact me</button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- ...existing code for Discord server card... -->
+        <div
+          class="bg-white/5 border border-white/10 rounded-2xl p-6 w-full max-w-md transition-colors feature-card"
+        >
+          <div class="flex items-center gap-4 mb-6">
+            <img
+              src="logosakura.png"
+              alt="Server Icon"
+              class="w-12 h-12 rounded-xl"
+            />
+            <div>
+              <h3 class="text-white text-xl font-bold">Sakura Bot</h3>
+              <p class="text-white/70 text-sm">Official Discord Server</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-4 text-white/70 text-sm">
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                <span>29 Online</span>
+              </div>
+              <div class="w-1 h-1 rounded-full bg-white/20"></div>
+              <span>40 Members</span>
+            </div>
+            <a
+              href="https://discord.gg/n6cqRvynMt"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-[#5865F2] hover:bg-[#4752C4] text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+              >Join Server</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-center py-16">
+        <button
+          onclick="scrollToTop()"
+          class="group bg-white/5 border border-white/10 rounded-2xl p-4 transition-all hover:border-gray-400"
+        >
+          <svg
+            class="w-6 h-6 text-white/70 group-hover:text-white transition-colors"
+            fill="none"
+            viewbox="0 0 24 24"
+            stroke="currentcolor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 10l7-7m0 0l7 7m-7-7v18"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <footer class="text-white py-16 border-t border-white/10 mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center text-white/70 text-sm">
+          © 2025 Sakura Bot. All rights reserved. • Not affiliated with Discord Inc.
+        </div>
+      </div>
+    </footer>
+</html>
